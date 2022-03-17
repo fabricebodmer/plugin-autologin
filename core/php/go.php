@@ -61,7 +61,8 @@ if (isset($queryparam['id'])) {
     $hashregisterdevice = $autologin->getHash();
     $sessionid = $autologin->getSessionId();
 
-    if ($allowedIP != $ip) {
+    //if ($allowedIP != $ip) {
+    if (false) { // disable IP check
         echo getErrorHTML("IP is not allowed.");
         log::add('autologin', 'error', __('This IP is not allowed ', __FILE__) . '(authorized: ' . $allowedIP . ' => device ip: ' . $ip . ')');
         die();
